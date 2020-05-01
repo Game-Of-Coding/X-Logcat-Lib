@@ -2,7 +2,7 @@
 
 # Uploads proj
 upload_proj () {
-    PROJECT_EXT_DIR_PATH=~/.android/projs/hola
+    PROJECT_EXT_DIR_PATH=~/.android/projs/X-Logcat-Lib
     echo Uploading...
     cp -r * .* $PROJECT_EXT_DIR_PATH/source
     cd $PROJECT_EXT_DIR_PATH/source
