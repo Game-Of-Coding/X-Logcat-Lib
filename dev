@@ -4,7 +4,8 @@
 upload_proj () {
     PROJECT_EXT_DIR_PATH=~/.android/projs/X-Logcat-Lib
     echo Uploading...
-    cp -r * .* $PROJECT_EXT_DIR_PATH/source
+    cp -r * $PROJECT_EXT_DIR_PATH/source
+    pwd
     cd $PROJECT_EXT_DIR_PATH/source
     
     git add -A
