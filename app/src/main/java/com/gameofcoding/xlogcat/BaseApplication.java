@@ -1,6 +1,10 @@
 package com.gameofcoding.xlogcat;
 
 import android.app.Application;
+import android.content.Intent;
+import android.util.Log;
+
+import com.gameofcoding.xlogcat.utils.AppConstants;
 
 public class BaseApplication extends Application {
     private static final String TAG = "BaseApplication";
@@ -14,7 +18,7 @@ public class BaseApplication extends Application {
 		public void uncaughtException(Thread thread, Throwable e) {
 		    try {
 			e.printStackTrace();
-			handleUncaughtException(thread, e, defaultEH);
+			uncaughtException(thread, e);
 		    } finally {
 			Intent intent = getPackageManager().getLaunchIntentForPackage("com.gameofcoding.debugger");
 			if (intent != null) {

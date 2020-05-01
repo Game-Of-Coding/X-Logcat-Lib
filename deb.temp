@@ -1,0 +1,30 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Uploads proj
+upload_proj () {
+    PROJECT_EXT_DIR_PATH=~/.android/projs/hola
+    echo Uploading...
+    cp -r * .* $PROJECT_EXT_DIR_PATH/source
+    cd $PROJECT_EXT_DIR_PATH/source
+    
+    git add -A
+    git commit -m "commit"
+    git push origin master --force
+    echo done
+}
+case $1 in
+    up | upload)
+	upload_proj
+	;;
+    down | download)
+	download_proj
+	;;
+    output | show_output)
+	show_output
+	;;
+    install | install_app)
+	install_app
+	;;
+    *)
+	echo Falied to manipulate argument '$1'.
+esac	
